@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Market 
+{% endblock %}
+
+{% block main_content %}
+    <div class="main">
+
+        <div class="flex">
+            <div class="col1">
+                <h2>Avaliable Products</h2>
+                <!-- Avaliable Products Table -->
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for item in items %}
+                        <tr>
+                            <td>{{item.id}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.desc}}</td>
+                            <td>
+                                {{ buy_form.hidden_tag() }}
+                                <form method="POST">
+                                    <input name="buyed_item" type="hidden" value="{{item.name}}">
+                                    {{ buy_form.submit()}}
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col2">
+                <h2>Owned Products</h2>
+                {% for owned_item in owned_items %}
+
+                    {% include 'includes/cards.html' %}
+                    
+                {% endfor %}
+
+
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    
+{% endblock %}

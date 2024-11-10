@@ -1,0 +1,8 @@
+<form method="POST">
+    <div style="display: flex; flex-direction: column; border: 2px solid; margin-bottom: 10px;">
+        <div>{{ owned_item.name }}</div>
+        <div>{{ owned_item.price }}</div>
+        {{ sell_form.owned_item_name(value=owned_item.name) }}
+        {{ sell_form.submit() }}
+    </div>
+</form>

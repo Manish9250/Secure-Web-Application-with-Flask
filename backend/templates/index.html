@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main_content %}
+    <div  style="text-align: center;">
+        <h1> Welcome to Gun Bazzar. </h1>
+        <p>Here, you will find many arms that you can't handle. 
+            <br>So, Keep your distance with them.
+        </p>
+        <a href='{{ url_for("market_page") }}'>HAPPY SHOPPING</a>
+    </div>
+{% endblock %}

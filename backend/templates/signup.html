@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+    <div class="main">
+        <div class="vertical-items">
+            <form method="post" class="form-register">
+                {{ form.hidden_tag() }}
+                <div>Username: </div>
+                {{ form.username(class="m", type="text") }}
+
+                <div>Email: </div>
+                {{ form.email(class="m", type="text") }}
+
+                <div>Password: </div>
+                {{ form.pwd1(class="m", type="password") }}
+
+                <div>Confirm Password: </div>
+                {{ form.pwd2(class="m", type="password") }}
+
+                <div>
+                    {{ form.submit(class="m") }}
+                </div>        
+
+            </form>
+        </div>
+        
+    </div>
+{% endblock %}
